@@ -35,59 +35,8 @@
                 $target_dir = 'upload/';
 
                 ?>
-            <section>
-                <h2><i class="fas fa-square-full"></i> EUROPA</h2>
-                <?php
-                $query = "SELECT * FROM articles 
-                            WHERE archive = 0 AND category = 'Europa'
-                            LIMIT 3";
-                $result = mysqli_query($dbc,$query);
-                $i = 0;
-                while ($row = mysqli_fetch_array($result)){
-                    echo "<article>";
-                    echo'<div class="article">'; 
-                    echo '<div class="europa_img">';
-                    echo '<a href="article.php?id='.$row['id'].'">';
-                    echo '<img src="' . $target_dir . $row['picture'] . '""'; 
-                    echo '</div>'; 
-                    echo '<div class="media_body">'; 
-                    echo '<h4 class="title">';  
-                    echo $row['title']; 
-                    echo '</a></h4>';
-                    echo '<p class="date">'.$row['dateWritten'].'</p>';
-                    echo '</div></div>'; 
-                    echo '</article>';
-
-                }
-                ?>
-            </section>
-            <section>
-                <h2><i class="fas fa-square-full"></i> TEKNAUTAS</h2>
-                <?php
-                $query = "SELECT * FROM articles WHERE archive = 0 AND category = 'Teknautas'
-
-                            LIMIT 3; ";
-                $result = mysqli_query($dbc, $query);
-                $i = 0;
-                while ($row = mysqli_fetch_array($result)){
-                    echo "<article>";
-                    echo'<div class="article">'; 
-                    echo '<div class="teknautas_img">'; 
-                    echo '<a href="article.php?id='.$row['id'].'">';
-                    echo '<img src="' . $target_dir . $row['picture'] . '"'; 
-                    echo '</div>'; 
-                    echo '<div class="media_body">'; 
-                    echo '<h4 class="title">';  
-                    echo $row['title']; 
-                    echo '</a></h4>';
-                    echo '<p class="date">'.$row['dateWritten'].'</p>'; 
-
-                    echo '</div></div>'; 
-                    echo '</article>';
-
-                }
-                ?>
-            </section>
+            
+            
         </main>
         
         <footer>
