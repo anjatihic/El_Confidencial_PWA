@@ -196,6 +196,35 @@ h2 i{
     color: #ec005f;
 }
 
+.category{
+    margin-left: 30px;
+}
+
+.title{
+    font-family: PlayFairDisplay;
+    text-align: center;
+    font-size: 44px;
+    font-weight: 400;
+}
+
+.about{
+    text-align: center;
+    font-family: Roboto;
+}
+
+.slika img{
+    display: block;
+    width: 90%;
+    margin: auto;
+}
+
+.row{
+    width: 90%;
+    margin: auto;
+    border-bottom: #6c8791 1px dashed;
+}
+
+
 
 
 

@@ -30,13 +30,10 @@
         </header>
 
         <main>
-                <?php
-                include 'connect.php';
-                $target_dir = 'upload/';
-
-                ?>
+            <?php
             
-            
+            ?>
+                
         </main>
         
         <footer>

@@ -16,7 +16,7 @@
     </head>
     <body>
         <header>
-            <a href="#" title="Ir a El Confidencial, noticias y actualidad."><img src="img/logo.svg" alt="El Confidencial logo" /></a>
+            <a href="indeks.php" title="Ir a El Confidencial, noticias y actualidad."><img src="img/logo.svg" alt="El Confidencial logo" /></a>
             
             <nav>
                 <ul>
@@ -47,11 +47,11 @@
                     echo "<article>";
                     echo'<div class="article">'; 
                     echo '<div class="europa_img">';
-                    echo '<a href="article.php?id='.$row['id'].'">';
+                    echo '<a href="clanak.php?id='.$row['id'].'">';
                     echo '<img src="' . $target_dir . $row['picture'] . '""'; 
                     echo '</div>'; 
                     echo '<div class="media_body">'; 
-                    echo '<h4 class="title">';  
+                    echo '<h4 >';  
                     echo $row['title']; 
                     echo '</a></h4>';
                     echo '<p class="date">'.$row['dateWritten'].'</p>';
@@ -73,11 +73,11 @@
                     echo "<article>";
                     echo'<div class="article">'; 
                     echo '<div class="teknautas_img">'; 
-                    echo '<a href="article.php?id='.$row['id'].'">';
+                    echo '<a href="clanak.php?id='.$row['id'].'">';
                     echo '<img src="' . $target_dir . $row['picture'] . '"'; 
                     echo '</div>'; 
                     echo '<div class="media_body">'; 
-                    echo '<h4 class="title">';  
+                    echo '<h4>';  
                     echo $row['title']; 
                     echo '</a></h4>';
                     echo '<p class="date">'.$row['dateWritten'].'</p>'; 

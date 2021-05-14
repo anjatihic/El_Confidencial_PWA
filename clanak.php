@@ -15,6 +15,15 @@
 
     </head>
     <body>
+        <?php
+        include "connect.php";
+        $target_dir = 'upload/';
+        $id = $_GET['id'];
+        $query = "SELECT * from articles
+                    WHERE id = $id";
+        $result = mysqli_query($dbc, $query);
+        $row = mysqli_fetch_array($result);
+        ?>
         <header>
             <a href="indeks.php" title="Ir a El Confidencial, noticias y actualidad."><img src="img/logo.svg" alt="El Confidencial logo" /></a>
             
@@ -30,13 +39,32 @@
         </header>
 
         <main>
+        <div class="row">
+            <h2 class="category">
+                <i class="fas fa-square-full"></i>
                 <?php
-                include 'connect.php';
-                $target_dir = 'upload/';
-
+                echo "<span style = 'text-transform: uppercase;'>".$row['category']."</span>";
                 ?>
-            
-            
+            </h2>
+            <h1 class="title">
+                <?php 
+                echo $row['title'];
+                ?>
+            </h1>
+            <section class="about">
+            <p><?php echo $row['about']; ?></p>
+        </section>
+        <section class="slika">
+            <?php 
+            echo '<img src="' . $target_dir . $row['picture'] . '">';
+            ?>
+        </section>    
+        </div>
+        
+        <section class="sadrzaj">
+            <p> <?php echo $row['content']; ?> </p> 
+        </section>
+                
         </main>
         
         <footer>

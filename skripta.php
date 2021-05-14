@@ -16,7 +16,7 @@
     </head>
     <body>
         <header>
-            <a href="#" title="Ir a El Confidencial, noticias y actualidad."><img src="img/logo.svg" alt="El Confidencial logo" /></a>
+            <a href="indeks.php" title="Ir a El Confidencial, noticias y actualidad."><img src="img/logo.svg" alt="El Confidencial logo" /></a>
             
             <nav>
                 <ul>
