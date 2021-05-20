@@ -156,7 +156,7 @@ button:hover{
 
 
 
-section{
+section, .kategorija-main{
     margin: 20px 10% 20px 10%;
     padding: 10px;
     clear: both;
@@ -167,6 +167,7 @@ article{
     display: block;
     float: left;
     width: 33.3%;
+    height: 600px;
 }
 
 article a{
@@ -177,6 +178,12 @@ article a{
     font-weight: normal;
 }
 
+article a img{
+    width: 98%;
+    height: 20rem;
+    object-fit: cover;
+}
+
 article a img:hover{
     opacity: 0.5;
 }
@@ -184,6 +191,19 @@ article a img:hover{
 article img{
     width: 98%;
     transition: .5s ease;
+}
+
+.article h4{
+    padding: 10px;
+    word-wrap: break-word;
+}
+
+@media(max-width: 900px){
+    article{
+        display: block;
+        float: left;
+        width: 100%;
+    }
 }
 
 .date{
@@ -230,12 +250,8 @@ h2 i{
 
 
 footer{
-    position: fixed;
-    left: 0;
-    bottom: 0;
     width: 100%;
     text-align: center;
-    padding: 15px;
     clear: both;
     height: 2.5rem;
 }
@@ -246,7 +262,6 @@ footer p, footer a{
 
 footer a{
     text-decoration: none;
-    margin: 10px;
     color: black;
 }
 

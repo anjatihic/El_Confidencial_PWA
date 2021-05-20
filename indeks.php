@@ -40,6 +40,7 @@
                 <?php
                 $query = "SELECT * FROM articles 
                             WHERE archive = 0 AND category = 'Europa'
+                            ORDER BY id DESC
                             LIMIT 3";
                 $result = mysqli_query($dbc,$query);
                 $i = 0;
@@ -65,7 +66,7 @@
                 <h2><i class="fas fa-square-full"></i> TEKNAUTAS</h2>
                 <?php
                 $query = "SELECT * FROM articles WHERE archive = 0 AND category = 'Teknautas'
-
+                            ORDER BY id DESC
                             LIMIT 3; ";
                 $result = mysqli_query($dbc, $query);
                 $i = 0;

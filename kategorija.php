@@ -29,13 +29,35 @@
             </nav>
         </header>
 
-        <main>
-                <?php
-                include 'connect.php';
-                $target_dir = 'upload/';
+        <main class="kategorija-main">
+            <?php
+            include 'connect.php';
+            $target_dir = 'upload/';
+            $id = $_GET['id'];
+            ?>
+            <h2 style="text-transform: uppercase;"><i class="fas fa-square-full"></i> <?php echo $id;?></h2>
+            <?php
+            $query = "SELECT * FROM articles
+                        WHERE category = '$id'
+                        ORDER BY id DESC";
+            $result = mysqli_query($dbc, $query);
+            while ($row = mysqli_fetch_array($result)){
+                echo "<article>";
+                echo'<div class="article">'; 
+                echo '<div class="teknautas_img">'; 
+                echo '<a href="clanak.php?id='.$row['id'].'">';
+                echo '<img src="' . $target_dir . $row['picture'] . '"'; 
+                echo '</div>'; 
+                echo '<div class="media_body">'; 
+                echo '<h4>';  
+                echo $row['title']; 
+                echo '</a></h4>';
+                echo '<p class="date">'.$row['dateWritten'].'</p>'; 
 
-                ?>
-            
+                echo '</div></div>'; 
+                echo '</article>';
+            }
+            ?>
             
         </main>
         
