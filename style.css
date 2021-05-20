@@ -167,7 +167,6 @@ article{
     display: block;
     float: left;
     width: 33.3%;
-    height: 600px;
 }
 
 article a{
@@ -196,6 +195,7 @@ article img{
 .article h4{
     padding: 10px;
     word-wrap: break-word;
+    height: 90px;
 }
 
 @media(max-width: 900px){
