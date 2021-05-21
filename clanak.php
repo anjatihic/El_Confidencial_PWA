@@ -62,7 +62,7 @@
         </div>
         
         <section class="sadrzaj">
-            <p> <?php echo $row['content']; ?> </p> 
+            <p> <?php echo nl2br($row['content']); ?> </p> 
         </section>
                 
         </main>

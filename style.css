@@ -20,6 +20,10 @@ body{
     font-family: Roboto, sans-serif;
 }
 
+form .error {
+    color: #ff0000;
+    }
+
 
 nav{
     text-align: center;
@@ -195,7 +199,7 @@ article img{
 .article h4{
     padding: 10px;
     word-wrap: break-word;
-    height: 90px;
+    height: 80px;
 }
 
 @media(max-width: 900px){
@@ -204,6 +208,15 @@ article img{
         float: left;
         width: 100%;
     }
+
+    .half-width{
+        width: 100%;
+    }
+
+    .half-width textarea{
+        width: 100%;
+    }
+
 }
 
 .date{

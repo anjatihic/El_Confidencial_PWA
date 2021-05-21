@@ -11,6 +11,8 @@
         <link rel="stylesheet" href="style.css" type="text/css"/>
         <link rel="icon" href="img/favicon.ico"/>
         <script src="https://kit.fontawesome.com/58e2d96e1f.js" crossorigin="anonymous"></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.19.1/jquery.validate.min.js"></script>
 
 
     </head>
@@ -35,26 +37,27 @@
             <section>
                 <h2><i class="fas fa-square-full"></i> UNESI VIJEST</h2>
                 
-                <form method="POST" enctype="multipart/form-data" action="skripta.php">
+                <form method="POST" enctype="multipart/form-data" action="skripta.php" name="unos">
                     <div class="full-width">
                         <label for="title" class="label">Naslov vijesti</label><br>
-                        <input type="text" name="title" placeholder="Naslov" required>
+                        <input type="text" name="title" placeholder="Naslov">
                     </div>
                     <div class="half-width">
                         <label for="about" class="label">Kratki sadržaj</label><br>
-                        <textarea name="about" placeholder="Kratki sadržaj"required></textarea>
+                        <textarea name="about" placeholder="Kratki sadržaj"></textarea>
                     </div>
                     <div class="half-width">
                         <label for="photoUpload" class="label">Naslovna slika</label><br><br>
-                        <input type="file"  accept="image/*" name="picture" id="picture" required>
+                        <input type="file"  accept="image/*" name="picture" id="picture">
                     </div>
                     <div class="full-width">
                         <label for="content" class="label">Sadržaj vijesti</label><br>
-                        <textarea name="content" placeholder="Sadržaj" required></textarea>
+                        <textarea name="content" placeholder="Sadržaj"></textarea>
                     </div>
                     <div class="full-width">
                         <label for="category" class="label">Kategorija vijesti</label><br>
-                        <select name="category" required>
+                        <select name="category">
+                            <option value="" disabled selected>Odabir kategorije</option>
                             <option value="Europa">Europa</option>
                             <option value="Teknautas">Teknautas</option>
                         </select>
@@ -70,6 +73,60 @@
                 
                 </form>
             </section>
+
+            <script type="text/javascript">
+                $(function() {
+                $("form[name='unos']").validate({
+                  rules: {
+                    title: {
+                      required: true,
+                      minlength: 5,
+                      maxlength: 30,
+                    
+                    },
+                    about: {
+                      required: true,
+                      minlength: 10,
+                      maxlength: 100,
+                      
+                    },
+                    content:{
+                      required: true,
+                    },
+                    picture:{
+                        required: true,
+                    },
+                    category:{
+                        required: true,
+                    }
+                  },
+                  messages: {
+                    title: {
+                      required: "Ne smije biti prazno",
+                      minlength: "Naslov mora imati između 5 i 30 znakova",
+                      maxlength: "Naslov mora imati između 5 i 30 znakova",
+                    },
+                    about:{
+                        required: "Ne smije biti prazno",
+                        minlength: "Kratki sadržaj mora imati između 10 i 100 znakova",
+                        maxlength: "Kratki sadržaj mora imati između 10 i 100 znakova",
+                    },
+                    content: {
+                      required: "Ne smije biti prazno",
+                    },
+                    picture:{
+                        required: "Slika mora biti unesena",
+                    },
+                    category:{
+                        required: "Kategorija mora biti odabrana",
+                    }
+                 },
+                  submitHandler: function(form) {
+                    form.submit();
+                  }
+                });
+              });
+              </script>
         </main>
         
         <footer>
