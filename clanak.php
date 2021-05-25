@@ -52,7 +52,7 @@
                 ?>
             </h1>
             <section class="about">
-            <p><?php echo $row['about']; ?></p>
+            <p id="kratkiSadrzaj"><?php echo $row['about']; ?></p>
         </section>
         <section class="slika">
             <?php 
@@ -62,7 +62,7 @@
         </div>
         
         <section class="sadrzaj">
-            <p> <?php echo nl2br($row['content']); ?> </p> 
+            <p id="tekst"> <?php echo nl2br($row['content']); ?> </p> 
         </section>
                 
         </main>

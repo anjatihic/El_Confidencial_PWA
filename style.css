@@ -187,6 +187,26 @@ article a img{
     object-fit: cover;
 }
 
+#kratkiSadrzaj{
+    font-size: 18px;
+    font-weight: 400;
+}
+
+#tekst{
+    width: 70%;
+    margin: auto;
+    font-size: 18px;
+    font-weight: 400;
+    line-height: 1.6;
+}
+
+#tekst::first-letter{
+    initial-letter: 3;
+    font-size: 35px;
+    line-height: 10px;
+    font-family: PlayFairDisplay, serif;
+}
+
 article a img:hover{
     opacity: 0.5;
 }
@@ -254,13 +274,7 @@ h2 i{
 .row{
     width: 90%;
     margin: auto;
-    border-bottom: #6c8791 1px dashed;
 }
-
-
-
-
-
 
 footer{
     width: 100%;
