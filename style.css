@@ -80,7 +80,7 @@ label{
     float: none;
 }
 
-.full-width input[type=text]{
+.full-width input[type=text], .full-width input[type=password]{
     width: 100%;
     border: none;
     border-bottom: 1px solid rgba(0, 0, 0, 0.1);
@@ -294,4 +294,34 @@ footer a{
 
 footer a:hover{
     color: #5a6468;
+}
+
+.prijava{
+    width: 30%;
+    margin: auto;
+}
+
+#registracija:hover{
+    color: #ec005f;
+}
+
+.popis{
+    display: flex;
+    margin: 15px;
+    align-items: center;
+}
+
+.popis h4, .popis p, .popis a{
+    margin: 10px;
+}
+
+.popis img{
+    width: 100px;
+    height: 100px;
+    object-fit: cover;
+}
+
+.logout{
+    margin: 10px;
+    text-align: right;
 }
