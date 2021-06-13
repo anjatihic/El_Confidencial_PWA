@@ -22,7 +22,10 @@ if(isset($_POST['login'])){
         $uspjesnaPrijava=true;
         $admin=$lvl;
     }else{
-        echo'Ne postoji navedeni korinik.<br> Registriraj te se!';
+        echo '<script type="text/javascript">'; 
+        echo 'alert("Korisničko ime ne postoji. Registrirajte se!");'; 
+        echo 'window.location.href = "registracija.php";';
+        echo '</script>';
     }
 };
 ?>
@@ -62,6 +65,7 @@ if(isset($_POST['login'])){
 
         <main>
             <?php
+//-----------------------------------------------prijavljen s admin pravima ----------------------------------------------------------------------
             if(($uspjesnaPrijava == true && $admin == true) || (isset($_SESSION['username'])) && $_SESSION['level'] == 1){
                 echo '<form action="logout.php">
                     <button class="logout" type="submit">Click here to log out</button>
@@ -77,8 +81,10 @@ if(isset($_POST['login'])){
                 while($row = mysqli_fetch_array($result)){
                     echo "<div class='popis'>";
                     echo "<img src='".$target_dir.$row['picture']."' />";
+                    echo '<div class="podpopis">';
                     echo "<h4>" . $row['title']. "</h4>";
                     echo "<p>".$row['category']. "</p>";
+                    echo '</div>';
                     echo "<p>".$row['dateWritten']."</p>";
                     echo '<a href="edit.php?id='.$row['id'].'"><i class="far fa-edit"></i></a>';
                     echo '<a href="delete.php?id='.$row['id'].'"><i class="fas fa-trash-alt"></i></a>';
@@ -146,7 +152,7 @@ if(isset($_POST['login'])){
                     </script> 
             <?php
                 
-            }
+            };
 
         ?>
 <!-- ----------------------------------------------------------------------------------------------------------------------------------------- --> 
